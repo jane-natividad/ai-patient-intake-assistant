@@ -2,7 +2,7 @@
 
 An AI-powered prototype that structures unstructured patient intake information, identifies missing details, and drafts follow-up questions — before clinical review.
 
-**[Live demo](#)** — you'll need to paste your own free [Anthropic API key](https://console.anthropic.com) to run an analysis; it's used client-side only and never stored or sent anywhere but api.anthropic.com. Please use the built-in sample data or fictional text only — do not enter real patient information.
+**[Live demo](https://ai-patient-intake-assistant.vercel.app)** — you'll need to paste your own free [Anthropic API key](https://console.anthropic.com) to run an analysis; it's used client-side only and never stored or sent anywhere but api.anthropic.com. Please use the built-in sample data or fictional text only — do not enter real patient information.
 
 ## Why I built this
 
