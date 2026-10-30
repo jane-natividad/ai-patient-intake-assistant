@@ -1,46 +1,56 @@
 # AI Patient Intake Assistant
 
-An AI-powered prototype that structures unstructured patient intake information, identifies missing details, and drafts follow-up questions — before clinical review.
+Turns a patient's own description of their symptoms into a clear, gap checked summary before a clinician reads it.
 
-**[Live demo](https://ai-patient-intake-assistant.vercel.app)** — to run an analysis, paste your own LLM API key — any OpenAI-compatible API (OpenAI, OpenRouter, Groq, Together, or a local Llama server) or an Anthropic-style API. The key is used client-side only and is never stored or sent anywhere except the endpoint you choose. Please use the built-in sample data or fictional text only — do not enter real patient information.
+**[Try the live demo](https://ai-patient-intake-assistant.vercel.app)**. To try the AI step, paste your own LLM API key. It works with any OpenAI compatible API (OpenAI, OpenRouter, Groq, Together, or Llama running on your own machine) or an Anthropic style API. Your key stays in your browser and is only sent to the endpoint you choose. Please use the sample data or your own fictional text.
 
-## Why I built this
+## Why I built it
 
-The idea came from a recurring lesson in clinical research and data management: downstream decisions are only as good as the information collected upstream. Before a clinician ever reviews it, a patient's own description of their symptoms — collected by phone, portal, or paper form — is often incomplete or inconsistent, and someone downstream — a clinician, a staff member — pays for that gap in time, follow-up, or missed context.
+Years in clinical research taught me one lesson over and over: decisions downstream are only as good as the information gathered at the start. Watching clinicians chase missing details on intake forms, I wondered how much of that checking could happen earlier, while leaving every clinical judgement with the clinician.
 
-This prototype explores how AI could help close that gap in everyday clinic intake, without replacing clinical judgment.
+## The problem
+
+A patient's own account of their symptoms, collected by phone, portal or paper, is often incomplete or inconsistent. A nurse or doctor later pays for that gap in time, follow up calls and missed context.
+
+## What I built
+
+A tool that structures free text intake, flags what's missing or contradictory, and drafts one follow up question for staff to review. It never diagnoses, and nothing is sent unless a person decides to send it.
+
+## Who it's for
+
+Primary care and clinic intake teams who want patient reported information organised and checked before a clinician reviews it.
 
 ## What it does
 
-- **Structures** unstructured patient free-text into a clear summary
-- **Flags** missing or inconsistent information
-- **Drafts** a follow-up question a staff member could review and send
+- Structures a patient's free text into a short, readable summary
+- Flags missing or inconsistent details, such as medications or allergies that weren't mentioned
+- Drafts a single follow up question a staff member can review and send
+- Stays out of diagnosis and treatment entirely
 
-## What it deliberately does not do
+## Decisions that shaped it
 
-- It does not diagnose or make clinical recommendations
-- It does not send anything automatically — a human reviews every output first
-- It stays in the information-quality and workflow-support lane
+1. **Human review is built in:** every output is a draft for a person to check.
+2. **Fewer, better flags:** a short list of accurate gaps is easier to act on than a long, noisy one.
+3. **Stays in its lane:** it helps with follow up questions and leaves diagnosis to clinicians.
 
-## Product decisions that mattered more than the model
+## Key takeaway
 
-1. **Human review is required, not optional** — nothing is actioned without a person reviewing it first
-2. **Information quality over automation** — fewer, accurate flags matter more than many noisy ones
-3. **Follow-up questions, not diagnosis** — this tool stays firmly in the administrative lane
-4. **Transparency over polish** — outputs should be explainable, not just plausible-sounding
+Every output is a draft. A person always decides what happens next.
 
 ## Built with
 
-- React + Vite
-- Any LLM API, provider-agnostic: OpenAI-compatible or Anthropic-style (bring-your-own key, client-side only — no backend, no stored keys)
+- React and Vite
+- Any LLM API through a small provider agnostic client (bring your own key, no backend)
 
-## Run locally
+## Run it locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Status
+## About this project
 
-This is a prototype built to explore a problem space — not a finished product. Built by [Jane Natividad](https://github.com/jane-natividad) — see more at [jane-natividad.github.io](https://jane-natividad.github.io).
+This is a working prototype I built to explore a real problem space. It uses illustrative, fictional data and isn't connected to any organisation's systems. You can find more of my work at [jane-natividad.github.io](https://jane-natividad.github.io).
+
+Built by [Jane Natividad](https://github.com/jane-natividad).
